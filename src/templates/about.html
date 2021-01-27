@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>About Us</h1>
+    <p>This is a template</p>
+    <p>{{ my_html|safe }}</p>
+    <p>{{ my_html|striptags }}</p>
+    <p>{{ my_html|striptags|slugify }}</p>
+    <p>{{ my_html|slugify }}</p>
+    <h3>{{ title|capfirst|upper }}</h3>
+    <h3>{{ title|capfirst|title }}</h3>
+    <p>{{ my_number }}</p>
+    <ul>
+        {% for item in my_list %}
+            {% if item == 123 %}
+                <li>{{ forloop.counter }} - {{ item|add:22 }}</li>
+            {% elif item == 456 %}
+                <li>{{ forloop.counter }} - {{ item|add:22 }}</li>
+            {% elif item == 'abc' %}
+                <li>{{ forloop.counter }} - This is invalid</li>
+            {% else %}
+                <li>{{ forloop.counter }} - {{ item }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

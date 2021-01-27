@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dummy page</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {{ request.user }}
+    {{ request.user.is_authenticated }}
+    {% block content %}
+    replace me
+    {% endblock %}
+</body>
+</html>
